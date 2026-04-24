@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Web Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DSA Visualizer</h1>
+            <div class="controls">
+                <button id="btn-generate">Generate New Array</button>
+                <select id="algo-select">
+                    <optgroup label="Sorting">
+                        <option value="quicksort">Quick Sort</option>
+                        <option value="bubblesort">Bubble Sort</option>
+                    </optgroup>
+                    <optgroup label="Searching">
+                        <option value="linearsearch">Linear Search</option>
+                        <option value="binarysearch">Binary Search</option>
+                    </optgroup>
+                    <optgroup label="Data Structures">
+                        <option value="stack">Stack</option>
+                        <option value="queue">Queue</option>
+                    </optgroup>
+                </select>
+                <div id="algo-controls" class="mode-controls">
+                    <button id="btn-play">Play</button>
+                    <button id="btn-pause">Pause</button>
+                    <button id="btn-reset">Reset</button>
+                    <div class="speed-control">
+                        <label for="speed-slider">Wait Time:</label>
+                        <input type="range" id="speed-slider" min="10" max="1000" value="300" dir="rtl">
+                    </div>
+                </div>
+                <div id="ds-controls" class="mode-controls" style="display: none;">
+                    <button id="btn-ds-add">Push</button>
+                    <button id="btn-ds-remove">Pop</button>
+                </div>
+            </div>
+        </header>
+        
+        <div id="search-target-container" style="display: none; text-align: center; margin-bottom: 15px; font-size: 1.2rem;">
+            Searching for Target: <span id="search-target" style="font-weight: bold; color: #03A9F4;"></span>
+        </div>
+        
+        <div id="visualizer-container">
+            <!-- Array bars -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

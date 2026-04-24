@@ -1,0 +1,129 @@
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.mode-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.controls button:hover { background-color: #555; }
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+#visualizer-container {
+    width: 100%;
+    height: 400px;
+    background-color: #252526;
+    border: 1px solid #333;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.bar {
+    flex: 1;
+    max-width: 40px;
+    background-color: #4CAF50; /* Default green */
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+    transition: background-color 0.15s, height 0.15s;
+    border-radius: 4px 4px 0 0;
+}
+
+/* Algorithmic Operation States */
+.bar.compare { background-color: #FFC107; } /* Yellow */
+.bar.swap { background-color: #F44336; }    /* Red */
+.bar.pivot { background-color: #9C27B0; }   /* Purple */
+.bar.mark_sorted { background-color: #03A9F4; } /* Blue */
+.bar.overwrite { background-color: #E91E63; } /* Pink */
+.bar.found { background-color: #00E676; box-shadow: 0 0 10px #00E676; } /* Bright Green */
+
+/* Data Structure Visualizations */
+#visualizer-container.stack,
+#visualizer-container.queue {
+    flex-direction: row;            /* Stack and Queue are horizontal */
+    align-items: center;            /* Center vertically */
+    justify-content: flex-start;    /* Items flow left to right */
+    overflow-x: auto;
+}
+
+.ds-item {
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+
+.ds-item.pushing {
+    background-color: #FF9800; /* Orange highlight on entrance */
+    transform: scale(1.1);
+}
+
+.ds-item.popping {
+    background-color: #F44336; /* Red highlight on exit */
+    transform: scale(0.5);
+    opacity: 0;
+}
